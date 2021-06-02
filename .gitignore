@@ -1,2 +1,9 @@
+*.bo
+*.ba
+*.h
+*.o
+out*
+*.cxx
+
 Lab2
 Lab3

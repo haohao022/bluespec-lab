@@ -1,4 +1,3 @@
-
 function Bit#(1) orGate(Bit#(1) op1, Bit#(1) op2);
     return op1 | op2;
 endfunction
@@ -14,4 +13,3 @@ endfunction
 function Bit#(1) notGate(Bit#(1) op1);
     return ~op1;
 endfunction
-
