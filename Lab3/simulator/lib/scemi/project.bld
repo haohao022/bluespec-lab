@@ -26,7 +26,8 @@ scemi-parameters-file:  ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/fpga/scemi.params
 extends-target: common
 build-for:      bluesim
 scemi-type:     TCP
-scemi-tcp-port: 3375
+scemi-tcp-port: 3602
+# scemi-tcp-port: 3375
 exe-file:       ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/bsim
 scemi-parameters-file:  ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/sim/scemi.params
 
