@@ -1,0 +1,249 @@
+#!/bin/sh
+#
+# Script to built a SCALE0 test executable for running under mips-isa-testrun etc.
+#
+
+progname=smips-testbuild
+
+# default options
+
+srcfile=
+verbose=
+execfile=
+preserve=
+testam=
+testdir=/mit/6.375/tools/smips-gcc/20060426
+smipssoft=
+textstart=
+datastart=
+randint=
+seed=
+vmh=
+cfile=
+opti=
+
+usage ()
+{
+    echo
+    echo "Usage: $progname [<options>] <srcfile> -o <execfile>"
+    echo
+    echo 'where <options> is one or more of:'
+    echo '-v               Verbose'
+    echo '-save-temps      Save temporary files'
+    echo '-smips           For "SMIPS" abstract machine'
+    echo '-smipsraw        For "SMIPSRAW" abstract machine'
+    echo '-smipsuser       For "SMIPSUSER" abstract machine'
+    echo '-testdir <dir>   Base directory for header and library files'
+    echo '-smipssoft <dir> Directory of smips-ld and smips-gcc'
+    echo '-Ttext <addr>    Put the .text section at this address'
+    echo '-Tdata <addr>    Put the .data section at this address'
+    echo '-rint <num>      Generate random interrupts, seed=num, 0=random seed'
+    echo '-vmh             Convert final executable to verilog vmh'
+    echo '-opti <level>    Specify optimization level for compiling C code (O1, O2, etc.)'
+    echo
+}
+
+while test $# -gt 0
+do
+    case $1 in
+        -v) verbose=-v;;
+        -save-temps) preserve=1;;
+        -o) shift; execfile="$1";;
+        -smips) testam=SMIPS;;
+        -smipsraw) testam=SMIPSRAW;;
+        -smipsuser) testam=SMIPSUSER;;
+        -vmh) vmh=1;;
+        -opti) shift; opti="$1";;
+        -testdir) shift; testdir="$1";;
+        -smipssoft) shift; smipssoft="$1";;
+        -rint)  shift; randint=1; seed="$1";;
+        -Ttext) shift; textstart="$1";;
+        -Tdata) shift; datastart="$1";;
+        -D*|-I*)  asmopts="$1 $asmopts";;
+        -L*) libs="$1 $libs";;
+        -*) usage ; exit 1;;
+        *)  if [ ! "$srcfile" ]; then srcfile=$1;
+            elif [ ! "$execfile" ]; then execfile=$1;
+            else usage; exit 1; fi;;
+    esac
+    shift
+done
+
+# setup some variables that use the options 
+
+testincdir="$testdir/include"
+testlibdir="$testdir/lib"
+tempdir=${TMPDIR:-/tmp}
+
+if [ ${srcfile%.c} != $srcfile ]
+then
+  cfile=1
+else
+  cfile=
+fi
+
+asmopts="-I$testincdir -c"
+if grep TEST_SMIPSRAW $srcfile > /dev/null
+then
+  testam=SMIPSRAW
+  libs="-L. -L$testlibdir"
+  ldopts="-T testraw.ld"
+elif grep TEST_SMIPSUSER $srcfile > /dev/null
+then
+  testam=SMIPSUSER
+  libs="-L. -L$testlibdir -lsmipstest"
+  ldopts="-T testuser.ld"
+elif grep TEST_SMIPS $srcfile > /dev/null
+then
+  testam=SMIPS
+  libs="-L. -L$testlibdir"
+  ldopts="-T test.ld"
+elif [ "$cfile" ]
+then
+  testam=SMIPSRAW
+  libs="-L. -L$testlibdir"
+  ldopts="-T testraw.ld"
+else
+  echo "Must specify a valid abstract machine using TEST_SMIPS, TEST_SMIPSRAW, or TEST_SMIPSUSER"
+  exit 1
+fi
+if [ "$textstart" ]
+then
+ldopts = "$ldopts -Ttext $textstart"
+fi
+if [ "$datastart" ]
+then
+ldopts = "$ldopts -Tdata $datastart"
+fi
+
+smipsld="smips-ld"
+smipsgcc="smips-gcc"
+
+if [ "$smipssoft" ]
+then
+   smipsld="$smipssoft/$smipsld"
+   smipsgcc="$smipssoft/$smipsgcc" 
+fi
+
+# some other global variables
+
+
+
+if [ ! "$srcfile" -o ! "$execfile" ]
+    then usage; exit 1
+fi
+
+# Bring in reset and exception handlers if we need them
+
+if [ "$testam" = "SMIPSUSER" ]
+then
+    if [ "$randint" ]
+    then
+        ldopts="-u __testexcepr -u __testresetsr $ldopts"
+    else
+        ldopts="-u __testexcep -u __testresets $ldopts"
+    fi
+else
+    if [ "$randint" ]
+    then
+        echo "$progname: ERROR - cannot have -rint and -$testam"
+        exit 1
+    fi
+fi
+
+# Temporary files
+
+objfile=${tempdir}/tb-s$$.o
+tempfiles="$objfile"
+if [ "$randint" ]
+then
+    randsrc=${tempdir}/tb-rs$$.S
+    randobj=${tempdir}/tb-ro$$.o
+    tempfiles="$tempfiles $randsrc $randobj"
+fi
+
+cleanup ()
+{
+    if [ ! "$preserve" ]
+    then
+        if [ "$verbose" ]
+        then
+            echo rm -f $tempfiles
+        fi
+        rm -f $tempfiles
+    fi
+}
+
+trap "cleanup; exit 1" 2
+
+# Random interrupt stuff
+
+if [ "$randint" ]
+then
+    # Build random table
+    if [ "$verbose" ]
+        then echo perl -e ... \> $randsrc; fi
+    perl - -- $seed <<"EOF" > $randsrc || exit 1
+        if ($ARGV[1])
+        {
+            srand $ARGV[1];
+        }
+        else
+        {
+            srand;
+        }
+        $num = int(rand(5.999)) + 5;
+        print " .globl __testranddata, __testrandend\n";
+        print " .data\n";
+        print "__testranddata:\n";
+        for ($i=0; $i<$num; $i++)
+        {
+           print " .word ", int(rand(10.999)), "\n";
+        }
+        print " .word ", 15 + int(rand(10.999)), "\n";
+        print "__testrandend:\n";
+EOF
+    if [ "$verbose" ]
+        then echo smips-gcc $randsrc -o $randobj ; fi
+    smips-gcc $randsrc -o $randobj
+fi
+
+if [ "$cfile" ]
+then
+  if [ "$opti" ]
+  then
+    asmopts="$asmopts -$opti"
+  fi
+else
+  asmopts="$asmopts -DTESTARCH_SMIPS -DTESTAM_$testam"
+fi
+
+# Need to avoid using the gp
+asmopts="$asmopts -G 0"
+
+if [ "$verbose" ]
+    then echo $smipsgcc $srcfile $asmopts -o $objfile ; fi
+$smipsgcc $srcfile $asmopts -nostdlib -nostartfiles -o $objfile  || { cleanup ; exit 1 ; }
+if [ "$cfile" ]
+then
+  if [ "$verbose" ]
+      then echo $smipsld $testdir/lib/crt1.o $objfile $randobj $ldopts -o $execfile $libs ; fi
+  $smipsld $testdir/lib/crt1.o $objfile $randobj $libs $ldopts -o $execfile || { cleanup ; exit 1 ; }
+else
+  if [ "$verbose" ]
+      then echo $smipsld $objfile $randobj $ldopts -o $execfile $libs ; fi
+  $smipsld $objfile $randobj $libs $ldopts -o $execfile || { cleanup ; exit 1 ; }
+fi
+
+if [ "$vmh" ]
+then
+  if [ "$verbose" ]
+  then
+      echo smips-elf2vmh $execfile > $execfile.tmp
+      echo mv $execfile.tmp $execfile
+  fi
+  smips-elf2vmh $execfile > $execfile.tmp
+  mv $execfile.tmp $execfile
+fi
+
+cleanup

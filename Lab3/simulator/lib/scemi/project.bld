@@ -1,0 +1,49 @@
+[DEFAULT]
+bsc-compile-options: -aggressive-conditions -keep-fires
+bsc-link-options:    -keep-fires
+
+[common]
+hide-target
+bsv-source-directories:  ${SMIPS_HOME}/simulator/lib ${SMIPS_HOME}/simulator/lib/scemi ${SMIPS_BUILD}/${SMIPS_SIMULATOR}
+log-directory:          ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/logdir
+verilog-directory:      ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/bdir
+binary-directory:       ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/bdir
+simulation-directory:   ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/bdir
+info-directory:         ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/bdir
+top-module:             mkBridge
+top-file:               ${SMIPS_HOME}/simulator/lib/scemi/Bridge.bsv
+
+[fpga]
+extends-target: common
+build-for:      ml605
+scemi-type:     PCIE_VIRTEX6
+xilinx-map-options: -detail
+altera-directory:       ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/quartus
+xilinx-directory:       ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/xilinx
+scemi-parameters-file:  ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/fpga/scemi.params
+
+[sim]
+extends-target: common
+build-for:      bluesim
+scemi-type:     TCP
+scemi-tcp-port: 3375
+exe-file:       ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/bsim
+scemi-parameters-file:  ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/sim/scemi.params
+
+[tb]
+extends-target: common
+scemi-tb
+build-for: c++
+c++-header-directory: ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/tbinclude
+c++-header-aliases
+c++-files: ${SMIPS_HOME}/simulator/lib/scemi/TestBench.cpp
+
+[fpga-tb]
+extends-target: tb
+exe-file: ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/fpga/tb
+scemi-parameters-file:  ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/fpga/scemi.params
+
+[sim-tb]
+extends-target: tb
+exe-file: ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/sim/tb
+scemi-parameters-file:  ${SMIPS_BUILD}/${SMIPS_SIMULATOR}/sim/scemi.params

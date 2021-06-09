@@ -1,0 +1,49 @@
+/*
+
+Copyright (C) 2012
+
+Muralidaran Vijayaraghavan <vmurali@csail.mit.edu>
+Arvind <arvind@csail.mit.edu>
+Derek Chiou <derek@ece.utexas.edu>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+
+Most code contains comments at the end which are important to read.
+
+The order in which various procs should be read is as follows:
+
+1. Unpipelined:
+  This contains the unpipelined implementations.
+  a. 1cyc.bsv
+  b. 2cyc_harvard.bsv - Princeton architecture doesn't add anything to the 2-cycle implementation, so ignored
+
+2. ControlHazardOnly:
+  Here we have two stages which are pipelined. Fetch is performed in stage 1 and the rest of the functions are performed in stage 2. The only hazard that can take place are control hazards.
+  a. noEhr_noPcMsg.bsv
+  b. 1rl.bsv
+  c. ehr_clear.bsv
+  d. ehr_epoch.bsv
+  e. pcMsg_clear.bsv
+  f. pcMsg_epoch.bsv
+
+3. RawAndControlHazards:
+  Here also we have two stages which are pipelined. Fetch, Decode and Register Read are performed in stage 1 and the rest in stage 2. Both control hazards and Read after Write (RAW) hazards can take place. We use epochs to deal with control hazards.
+  a. ehr_stall.bsv - The last code that uses Ehr to deal with control hazards. From now on, we only use pcMsg.
+  b. pcMsg_stall.bsv
+  c. pcMsg_bypass.bsv
+
+4. 6stage:
+  Each operation is performed in its own stage.
+  a. stall.bsv
+  b. stall_waw.bsv - Stall for WAW hazards in addition to RAW hazards
+  c. bypass.bsv
+  d. bypass_dirPred.bsv
+  e. bypass_dirPred_cache.bsv
+

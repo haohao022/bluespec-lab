@@ -1,0 +1,141 @@
+#!/bin/bash
+#/*
+#
+#Copyright (C) 2012 Muralidaran Vijayaraghavan <vmurali@csail.mit.edu>
+#
+#Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+#
+#The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+#
+#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+#*/
+#
+#
+
+# Use this if you don't have a cross compiler
+CC="$SMIPS_HOME/compiler/bin/smips-gcc -B$SMIPS_HOME/compiler/lib/gcc-lib/smips/egcs-2.90.29/ -B$SMIPS_HOME/compiler/bin/ -B$SMIPS_HOME/compiler/smips/bin/ -G 0"
+CDUMP=$SMIPS_HOME/compiler/bin/smips-objdump
+
+# Otherwise use this
+#CC="mips-linux-gnu-gcc -fno-delayed-branch -Wa,-O0 -Wl,-Ttext=0x1000,-e__start -specs /home/vmurali/compiler/libc/musl/build/lib/musl-gcc.specs"
+#CDUMP=mips-linux-gnu-objdump
+
+if [[ -z $SMIPS_HOME ]] ; then
+  echo "SMIPS_HOME undefined. Please define it"
+  exit
+fi
+
+if [[ -z $SMIPS_BUILD ]] ; then
+  echo "SMIPS_BUILD undefined. Please define it"
+  exit
+fi
+
+TEMP=`getopt -o b:c:rd --long build:,compile:,run,clean \
+     -n 'smips' -- "$@"`
+
+if [ $? != 0 ] ; then echo "Terminating..." >&2 ; exit 1 ; fi
+
+# Note the quotes around `$TEMP': they are essential!
+eval set -- "$TEMP"
+
+BUILD=""
+COMPILE=""
+RUN=0
+CLEAN=0
+
+while true ; do
+  case "$1" in
+    -b|--build)   BUILD="$2" ; shift 2 ;;
+                -c|--compile) COMPILE="$2" ; shift 2 ;;
+                -r|--run)     RUN=1 ; shift ;;
+    -d|--clean)   CLEAN=1 ; shift ;;
+                --) shift ; break ;;
+    *) echo "Unknown option!"
+                   echo "Usage: $0 [-b|--build <all|path to processor>] [-c|--compile <all|path to program> [-r|--run] [-d|--clean]" ; exit 1 ;;
+  esac
+done
+
+if [[ $CLEAN == 1 ]] ; then
+  rm -rf $SMIPS_BUILD
+fi
+
+if [[ $BUILD == all ]] ; then
+  BUILD=`find $SMIPS_HOME/simulator/procs -type f`
+fi
+
+if [[ $COMPILE == all ]] ; then
+  COMPILE=`find $SMIPS_HOME/programs/src/ -maxdepth 1 -mindepth 1`
+fi
+
+COMMONPROC=$SMIPS_HOME/simulator/procs/
+COMMONPROG=$SMIPS_HOME/programs/src/
+
+function wrappedBuild {
+  echo ""
+  echo "Building $1"
+  newproc=${1#$COMMONPROC}
+  build=$SMIPS_BUILD/$newproc
+  mkdir -p $build/bdir
+  ln -sf $1 $build/Proc.bsv
+  touch $build/Proc.bsv
+  export SMIPS_SIMULATOR=$newproc
+  mkdir -p $build/sim
+  build -p $SMIPS_HOME/simulator/lib/scemi/project.bld sim sim-tb > $build/compile.out
+  if [[ $? != 0 ]] ; then
+    echo "Error building. Check $build/compile.out and the log files in $build/logdir"
+    exit
+  fi
+  unset SMIPS_SIMULATOR
+}
+
+function wrappedCompile {
+  echo ""
+  echo "Compiling $2"
+  newprog=${2#$COMMONPROG}
+  build=$SMIPS_BUILD/$newprog
+  mkdir -p $build
+  $CC -static -O2 -nostdlib -nostartfiles -Wa,-O0 -Wl,-Ttext=0x1000,-e__start $SMIPS_HOME/programs/lib/start.c $SMIPS_HOME/programs/lib/print.c $SMIPS_HOME/programs/lib/cop.c $2$3 -o $build/a.out
+  $CDUMP --disassemble-all --disassemble-zeroes $build/a.out > $build/out.dump
+  $SMIPS_HOME/utility-bins/objdump2vmh.pl $build/out.dump $build/out.vmh
+  if [[ $RUN == 1 ]] ; then
+    wrappedRun ${1#$COMMONPROC} $newprog
+  fi
+}
+
+function wrappedRun {
+  echo "Running $2 on $1"
+  pkill -9 bluetcl 2>&1 >/dev/null
+  ln -sf $SMIPS_BUILD/$2/out.vmh $SMIPS_BUILD/$1/memory.vmh
+  mkdir -p $SMIPS_BUILD/$1/$2
+  pushd . > /dev/null
+  cd $SMIPS_BUILD/$1
+  $SMIPS_HOME/utility-bins/redirect ./bsim $SMIPS_BUILD/$1/$2/bsimOut &
+  sleep 5
+  cd sim
+  $SMIPS_HOME/utility-bins/redirect ./tb $SMIPS_BUILD/$1/$2/tbOut
+  popd > /dev/null
+}
+
+function fullCompile {
+  for prog in $COMPILE ; do
+    prog=`readlink -f $prog`
+    if [[ `basename $prog` != assembly ]] ; then
+      wrappedCompile "$1" $prog '/*.c'
+    else
+      for asm in $prog/*.S ; do
+        wrappedCompile "$1" $prog/`basename $asm`
+      done
+    fi
+  done
+}
+
+if [[ -z $BUILD ]] ; then
+  fullCompile
+fi
+
+for proc in $BUILD ; do
+  proc=`readlink -f $proc`
+  wrappedBuild $proc
+  fullCompile $proc
+done
