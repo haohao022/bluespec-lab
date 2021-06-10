@@ -39,14 +39,14 @@ module mkRightShifterPipelined (RightShifterPipelined);
 
 // bsc macro seems not support ##.
 #define STEP_RULE_DECL(fifo_in, fifo_out, shamt_offset, shift_offset) \
-        Operand operand_shift = fifo_in.first()[37:6]; \
-        Shamt shamt_shift = fifo_in.first()[5:1]; \
-        Sign sign_shift = fifo_in.first()[0]; \
-        operand_shift = multiplexer32( \
-            shamt_shift[shamt_offset], operand_shift, \
-            {signExtend(sign_shift), operand_shift[31:shift_offset]}); \
-        fifo_out.enq({operand_shift, shamt_shift, sign_shift}); \
-        fifo_in.deq();
+    Operand operand_shift = fifo_in.first()[37:6]; \
+    Shamt shamt_shift = fifo_in.first()[5:1]; \
+    Sign sign_shift = fifo_in.first()[0]; \
+    operand_shift = multiplexer32( \
+        shamt_shift[shamt_offset], operand_shift, \
+        {signExtend(sign_shift), operand_shift[31:shift_offset]}); \
+    fifo_out.enq({operand_shift, shamt_shift, sign_shift}); \
+    fifo_in.deq();
 
     rule shift1 (True);
         STEP_RULE_DECL(shift_in, shift1_status, 0, 1) endrule

@@ -1,4 +1,4 @@
 *.bo
 *.ba
 *.o
-Lab3/build/
+Lab3/build/*

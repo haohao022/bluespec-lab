@@ -25,7 +25,7 @@ import Decode::*;
 import Exec::*;
 import Cop::*;
 
-typedef enum {Fetch, Execute} State deriving (Bits, Eq);
+typedef enum {Fetch, Execute, Writeback} State deriving (Bits, Eq);
 
 interface Proc;
    method ActionValue#(Tuple2#(RIndx, Data)) cpuToHost;
@@ -41,7 +41,8 @@ module [Module] mkProc(Proc);
   Cop       cop <- mkCop;
   
   Reg#(State) state <- mkReg(Fetch);
-  Reg#(Data)     ir <- mkRegU;
+  Reg#(Data) ir <- mkRegU;
+  Reg#(ExecInst) execInst <- mkRegU;
 
   rule doFetch(cop.started && state == Fetch);
     let inst = iMem.req(pc);
@@ -84,12 +85,18 @@ module [Module] mkProc(Proc);
       let d <- dMem.req(MemReq{op: St, addr: eInst.addr, byteEn: byteEn, data: data});
     end
 
-    if (isValid(eInst.dst) && validValue(eInst.dst).regType == Normal)
-      rf.wr(validRegValue(eInst.dst), eInst.data);
+    execInst <= eInst;
+    // switch to writeback state
+    state <= Writeback;
+  endrule
 
-    pc <= eInst.brTaken ? eInst.addr : pc + 4;
+  rule doWriteback(cop.started && state == Writeback);
+    if (isValid(execInst.dst) && validValue(execInst.dst).regType == Normal)
+      rf.wr(validRegValue(execInst.dst), execInst.data);
 
-    cop.wr(eInst.dst, eInst.data);
+    pc <= execInst.brTaken ? execInst.addr : pc + 4;
+
+    cop.wr(execInst.dst, execInst.data);
 
     // switch back to fetch
     state <= Fetch;
