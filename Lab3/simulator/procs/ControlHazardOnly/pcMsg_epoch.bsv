@@ -44,12 +44,16 @@ module [Module] mkProc(Proc);
   Cop       cop <- mkCop;
   AddrPred pcPred <- mkBtb;
 
-  //Fifo#(1, Fetch2Execute) ir <- mkPipelineFifo;
+  // Fifo#(1, Fetch2Execute) ir <- mkPipelineFifo;
   Fifo#(2, Fetch2Execute) ir <- mkCFFifo;
   Fifo#(1, Redirect) execRedirect <- mkBypassFifo;
-  //Fifo#(2, Redirect)   execRedirect <- mkCFFifo;
+  // Fifo#(2, Redirect)   execRedirect <- mkCFFifo;
 
-  //This design uses two epoch registers, one for each stage of the pipeline. Execute sets the eEpoch and discards any instruction that doesn't match it. It passes the information about change of epoch to fetch stage indirectly by passing a valid execRedirect using a Fifo. Fetch changes fEpoch everytime it gets a execRedirect and tags every instruction with its epoch
+  // This design uses two epoch registers, one for each stage of the pipeline.
+  // Execute sets the eEpoch and discards any instruction that doesn't match it.
+  // It passes the information about change of epoch to fetch stage indirectly by
+  // passing a valid execRedirect using a Fifo. Fetch changes fEpoch everytime it
+  // gets a execRedirect and tags every instruction with its epoch
 
   Reg#(Bool) fEpoch <- mkReg(False);
   Reg#(Bool) eEpoch <- mkReg(False);
@@ -121,10 +125,22 @@ module [Module] mkProc(Proc);
         rf.wr(validRegValue(eInst.dst), eInst.data);
   
       // Send the branch resolution to fetch stage, irrespective of whether it's mispredicted or not
-       // TBD: put code here that does what the comment immediately above says
+      // if (eInst.iType == Br) begin
+      //   execRedirect.enq(Redirect{pc: pc, nextPc: eInst.addr,
+      //     brType: eInst.iType, taken: eInst.brTaken, mispredict: eInst.mispredict});
+      //   // On a branch mispredict, change the epoch, to throw away wrong path instructions
+      //   if (eInst.mispredict) eEpoch <= !eEpoch;
+      // end
 
-      // On a branch mispredict, change the epoch, to throw away wrong path instructions
-       // TBD: put code here that does what the comment immediately above says
+      if (eInst.iType == Br || eInst.iType == J || eInst.iType ==Jr) begin
+        execRedirect.enq(Redirect{pc: pc, nextPc: eInst.addr,
+          brType: eInst.iType, taken: eInst.brTaken, mispredict: eInst.mispredict});
+        // On a branch mispredict, change the epoch, to throw away wrong path instructions
+      end
+      if (eInst.mispredict) begin
+        $display("mispredict pc = %h, nextpc = %h", pc, eInst.addr);
+        eEpoch <= !eEpoch;
+      end
   
       cop.wr(eInst.dst, eInst.data);
     end
