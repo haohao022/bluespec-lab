@@ -1,0 +1,75 @@
+This is Info file cpp.info, produced by Makeinfo version 1.67 from the
+input file ../../egcs-1.0.3a/gcc/cpp.texi.
+
+   This file documents the GNU C Preprocessor.
+
+   Copyright 1987, 1989, 1991, 1992, 1993, 1994, 1995 Free Software
+Foundation, Inc.
+
+   Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+   Permission is granted to copy and distribute modified versions of
+this manual under the conditions for verbatim copying, provided also
+that the entire resulting derived work is distributed under the terms
+of a permission notice identical to this one.
+
+   Permission is granted to copy and distribute translations of this
+manual into another language, under the above conditions for modified
+versions.
+
+
+Indirect:
+cpp.info-1: 820
+cpp.info-2: 50703
+cpp.info-3: 90786
+
+Tag Table:
+(Indirect)
+Node: Top820
+Node: Global Actions3729
+Node: Directives6249
+Node: Header Files7936
+Node: Header Uses8595
+Node: Include Syntax10087
+Node: Include Operation13229
+Node: Once-Only15091
+Node: Inheritance17516
+Node: Macros20049
+Node: Simple Macros20963
+Node: Argument Macros23951
+Node: Predefined29749
+Node: Standard Predefined30179
+Node: Nonstandard Predefined37485
+Node: Stringification41061
+Node: Concatenation43987
+Node: Undefining47260
+Node: Redefining48299
+Node: Macro Pitfalls49599
+Node: Misnesting50703
+Node: Macro Parentheses51717
+Node: Swallow Semicolon53585
+Node: Side Effects55485
+Node: Self-Reference57183
+Node: Argument Prescan59459
+Node: Cascaded Macros64461
+Node: Newlines in Args65606
+Node: Conditionals66951
+Node: Conditional Uses68303
+Node: Conditional Syntax69726
+Node: #if Directive70312
+Node: #else Directive72601
+Node: #elif Directive73268
+Node: Deleted Code74646
+Node: Conditionals-Macros75707
+Node: Assertions79392
+Node: #error Directive83627
+Node: Combining Sources85112
+Node: Other Directives88023
+Node: Output89477
+Node: Invocation90786
+Node: Concept Index102793
+Node: Index105646
+
+End Tag Table
