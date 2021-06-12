@@ -125,22 +125,16 @@ module [Module] mkProc(Proc);
         rf.wr(validRegValue(eInst.dst), eInst.data);
   
       // Send the branch resolution to fetch stage, irrespective of whether it's mispredicted or not
-      // if (eInst.iType == Br) begin
-      //   execRedirect.enq(Redirect{pc: pc, nextPc: eInst.addr,
-      //     brType: eInst.iType, taken: eInst.brTaken, mispredict: eInst.mispredict});
-      //   // On a branch mispredict, change the epoch, to throw away wrong path instructions
-      //   if (eInst.mispredict) eEpoch <= !eEpoch;
-      // end
-
-      if (eInst.iType == Br || eInst.iType == J || eInst.iType ==Jr) begin
+      // Noted that the primitive version don't consider J, JR either. And the
+      // answer in BUAA_COURSE_SHARING is not reliable, it simply closes the
+      // branch prediction. Anyway, thanks to those pioneers of our open
+      // source course!
+      if (eInst.iType == Br || eInst.iType == J || eInst.iType ==Jr)
         execRedirect.enq(Redirect{pc: pc, nextPc: eInst.addr,
-          brType: eInst.iType, taken: eInst.brTaken, mispredict: eInst.mispredict});
-        // On a branch mispredict, change the epoch, to throw away wrong path instructions
-      end
-      if (eInst.mispredict) begin
-        $display("mispredict pc = %h, nextpc = %h", pc, eInst.addr);
-        eEpoch <= !eEpoch;
-      end
+          brType: eInst.iType, taken: eInst.brTaken,
+          mispredict: eInst.mispredict});
+      // On a branch mispredict, change the epoch, to throw away wrong path instructions
+      if (eInst.mispredict) eEpoch <= !eEpoch;
   
       cop.wr(eInst.dst, eInst.data);
     end

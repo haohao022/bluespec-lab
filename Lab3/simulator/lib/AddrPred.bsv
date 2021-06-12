@@ -30,14 +30,14 @@ module mkPcPlus4(AddrPred);
 endmodule
 
 typedef 64 BtbEntries;
-typedef Bit#(TLog#(BtbEntries)) BtbIndex; // Bit#(6)
-typedef Bit#(TSub#(TSub#(AddrSz, TLog#(BtbEntries)), 2)) BtbTag; // Bit#(24)
+typedef Bit#(TLog#(BtbEntries)) BtbIndex;
+typedef Bit#(TSub#(TSub#(AddrSz, TLog#(BtbEntries)), 2)) BtbTag;
 
 (* synthesize *)
 module mkBtb(AddrPred);
-  RegFile#(BtbIndex, Addr) arr <- mkRegFileFull; // 32bit * 64
-  RegFile#(BtbIndex, BtbTag) tagArr <- mkRegFileFull; // 24bit * 64
-  Vector#(BtbEntries, Reg#(Bool)) validArr <- replicateM(mkReg(False)); // 1bit * 64
+  RegFile#(BtbIndex, Addr) arr <- mkRegFileFull;
+  RegFile#(BtbIndex, BtbTag) tagArr <- mkRegFileFull;
+  Vector#(BtbEntries, Reg#(Bool)) validArr <- replicateM(mkReg(False));
 
   function BtbIndex getIndex(Addr pc) = truncate(pc >> 2);
   function BtbTag getTag(Addr pc) = truncateLSB(pc); 
@@ -52,7 +52,6 @@ module mkBtb(AddrPred);
   endmethod
 
   method Action update(Redirect rd);
-    $display("pred upd, pc = %h, nextpc = %h, taken = %b", rd.pc, rd.nextPc, rd.taken);
     if(rd.taken)
     begin
       let index = getIndex(rd.pc);
