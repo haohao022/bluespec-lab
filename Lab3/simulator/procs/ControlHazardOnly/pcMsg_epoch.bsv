@@ -131,6 +131,7 @@ module [Module] mkProc(Proc);
       // source course!
       if (eInst.iType == Br || eInst.iType == J || eInst.iType ==Jr)
         execRedirect.enq(Redirect{pc: pc, nextPc: eInst.addr,
+          // brType: eInst.iType, taken: False, // Turn branch prediction off.
           brType: eInst.iType, taken: eInst.brTaken,
           mispredict: eInst.mispredict});
       // On a branch mispredict, change the epoch, to throw away wrong path instructions

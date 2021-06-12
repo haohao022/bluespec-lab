@@ -1,0 +1,263 @@
+utility-bins/smips -b simulator/procs/Unpipelined/2cyc_harvard.bsv \
+  -c all --run
+
+Building /home/ZY2006202/lab_template/Lab3/simulator/procs/Unpipelined/2cyc_harvard.bsv
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/qsort
+Running qsort on Unpipelined/2cyc_harvard.bsv
+Cycles = 64884
+Insts  = 21628
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/median
+Running median on Unpipelined/2cyc_harvard.bsv
+Cycles = 20619
+Insts  = 6873
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/vvadd
+Running vvadd on Unpipelined/2cyc_harvard.bsv
+Cycles = 9060
+Insts  = 3020
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/towers
+Running towers on Unpipelined/2cyc_harvard.bsv
+Cycles = 29727
+Insts  = 9909
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/print
+Running print on Unpipelined/2cyc_harvard.bsv
+chello world
+dhello world
+25
+Cycles = 1107
+Insts  = 369
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv1_addiu.S
+Running assembly/smipsv1_addiu.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv1_bne.S
+Running assembly/smipsv1_bne.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv1_lw.S
+Running assembly/smipsv1_lw.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv1_simple.S
+Running assembly/smipsv1_simple.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv1_sw.S
+Running assembly/smipsv1_sw.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_addiu.S
+Running assembly/smipsv2_addiu.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_addu.S
+Running assembly/smipsv2_addu.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_andi.S
+Running assembly/smipsv2_andi.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_and.S
+Running assembly/smipsv2_and.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_beq.S
+Running assembly/smipsv2_beq.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_bgez.S
+Running assembly/smipsv2_bgez.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_bgtz.S
+Running assembly/smipsv2_bgtz.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_blez.S
+Running assembly/smipsv2_blez.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_bltz.S
+Running assembly/smipsv2_bltz.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_bne.S
+Running assembly/smipsv2_bne.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_jalr.S
+Running assembly/smipsv2_jalr.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_jal.S
+Running assembly/smipsv2_jal.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_jr.S
+Running assembly/smipsv2_jr.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_j.S
+Running assembly/smipsv2_j.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_lui.S
+Running assembly/smipsv2_lui.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_lw.S
+Running assembly/smipsv2_lw.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_nor.S
+Running assembly/smipsv2_nor.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_ori.S
+Running assembly/smipsv2_ori.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_or.S
+Running assembly/smipsv2_or.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_simple.S
+Running assembly/smipsv2_simple.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_sll.S
+Running assembly/smipsv2_sll.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_sllv.S
+Running assembly/smipsv2_sllv.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_slti.S
+Running assembly/smipsv2_slti.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_sltiu.S
+Running assembly/smipsv2_sltiu.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_slt.S
+Running assembly/smipsv2_slt.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_sltu.S
+Running assembly/smipsv2_sltu.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_sra.S
+Running assembly/smipsv2_sra.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_srav.S
+Running assembly/smipsv2_srav.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_srl.S
+Running assembly/smipsv2_srl.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_srlv.S
+Running assembly/smipsv2_srlv.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_subu.S
+Running assembly/smipsv2_subu.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_sw.S
+Running assembly/smipsv2_sw.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_xori.S
+Running assembly/smipsv2_xori.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/assembly/smipsv2_xor.S
+Running assembly/smipsv2_xor.S on Unpipelined/2cyc_harvard.bsv
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/multiply
+Running multiply on Unpipelined/2cyc_harvard.bsv
+Cycles = 63300
+Insts  = 21100
+PASSED
+SceMi Service thread finished!
+
+Compiling /home/ZY2006202/lab_template/Lab3/programs/src/filters
+Running filters on Unpipelined/2cyc_harvard.bsv
+called sharpen
+exiting sharpen
+called sharpen
+exiting sharpen
+called sharpen
+exiting sharpen
+called sharpen
+exiting sharpen
+called sharpen
+exiting sharpen
+called sharpen
+exiting sharpen
+Cycles = 2601993
+Insts  = 867331
+PASSED
+SceMi Service thread finished!
