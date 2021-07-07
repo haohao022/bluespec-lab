@@ -6,6 +6,7 @@ Building /home/ZY2006202/lab_template/Lab4/simulator/procs/ControlHazardOnly/pcM
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/qsort
 Running qsort on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -13,13 +14,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -33,6 +32,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/median
 Running median on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -40,13 +40,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -60,6 +58,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/vvadd
 Running vvadd on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -67,13 +66,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -87,6 +84,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/towers
 Running towers on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -94,13 +92,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -114,6 +110,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/print
 Running print on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -121,13 +118,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -144,6 +139,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv1_addiu.S
 Running assembly/smipsv1_addiu.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -151,13 +147,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -169,6 +163,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv1_bne.S
 Running assembly/smipsv1_bne.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -176,13 +171,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -194,6 +187,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv1_lw.S
 Running assembly/smipsv1_lw.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -201,13 +195,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -219,6 +211,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv1_simple.S
 Running assembly/smipsv1_simple.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -226,13 +219,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -244,6 +235,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv1_sw.S
 Running assembly/smipsv1_sw.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -251,13 +243,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -269,6 +259,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_addiu.S
 Running assembly/smipsv2_addiu.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -276,13 +267,11 @@ pkill: killing pid 32140 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
 pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
-pkill: killing pid 67112 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -294,6 +283,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_addu.S
 Running assembly/smipsv2_addu.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -306,7 +296,6 @@ pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -318,6 +307,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_andi.S
 Running assembly/smipsv2_andi.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -330,7 +320,6 @@ pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -342,6 +331,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_and.S
 Running assembly/smipsv2_and.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -354,7 +344,6 @@ pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -366,6 +355,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_beq.S
 Running assembly/smipsv2_beq.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -378,7 +368,6 @@ pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -390,6 +379,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_bgez.S
 Running assembly/smipsv2_bgez.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -399,11 +389,9 @@ pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 94197 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -415,6 +403,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_bgtz.S
 Running assembly/smipsv2_bgtz.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -424,11 +413,9 @@ pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 94197 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114498 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
 pkill: killing pid 165815 failed: Operation not permitted
@@ -440,6 +427,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_blez.S
 Running assembly/smipsv2_blez.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -450,7 +438,6 @@ pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 96344 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
@@ -464,6 +451,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_bltz.S
 Running assembly/smipsv2_bltz.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -475,7 +463,6 @@ pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
@@ -488,6 +475,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_bne.S
 Running assembly/smipsv2_bne.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -499,8 +487,6 @@ pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 98186 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
@@ -513,6 +499,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_jalr.S
 Running assembly/smipsv2_jalr.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -524,8 +511,6 @@ pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 98186 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
@@ -538,6 +523,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_jal.S
 Running assembly/smipsv2_jal.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -549,7 +535,6 @@ pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
@@ -562,6 +547,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_jr.S
 Running assembly/smipsv2_jr.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -573,8 +559,6 @@ pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 100159 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
@@ -587,6 +571,7 @@ SceMi Service thread finished!
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_j.S
 Running assembly/smipsv2_j.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
 pkill: killing pid 13314 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 26577 failed: Operation not permitted
 pkill: killing pid 26806 failed: Operation not permitted
 pkill: killing pid 30055 failed: Operation not permitted
@@ -598,8 +583,6 @@ pkill: killing pid 76959 failed: Operation not permitted
 pkill: killing pid 78631 failed: Operation not permitted
 pkill: killing pid 95573 failed: Operation not permitted
 pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 101192 failed: Operation not permitted
 pkill: killing pid 111928 failed: Operation not permitted
 pkill: killing pid 117193 failed: Operation not permitted
 pkill: killing pid 117517 failed: Operation not permitted
@@ -611,538 +594,190 @@ SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_lui.S
 Running assembly/smipsv2_lui.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 102176 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_lw.S
 Running assembly/smipsv2_lw.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 103149 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_nor.S
 Running assembly/smipsv2_nor.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 104122 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_ori.S
 Running assembly/smipsv2_ori.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 105091 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_or.S
 Running assembly/smipsv2_or.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 106065 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_simple.S
 Running assembly/smipsv2_simple.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 107007 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_sll.S
 Running assembly/smipsv2_sll.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 107972 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_sllv.S
 Running assembly/smipsv2_sllv.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 108891 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_slti.S
 Running assembly/smipsv2_slti.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 109796 failed: Operation not permitted
-pkill: killing pid 110201 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_sltiu.S
 Running assembly/smipsv2_sltiu.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 110201 failed: Operation not permitted
-pkill: killing pid 110860 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_slt.S
 Running assembly/smipsv2_slt.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111788 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_sltu.S
 Running assembly/smipsv2_sltu.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 112475 failed: Operation not permitted
-pkill: killing pid 112746 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_sra.S
 Running assembly/smipsv2_sra.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 113666 failed: Operation not permitted
-pkill: killing pid 113856 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_srav.S
 Running assembly/smipsv2_srav.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 114867 failed: Operation not permitted
-pkill: killing pid 114873 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_srl.S
 Running assembly/smipsv2_srl.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 116125 failed: Operation not permitted
-pkill: killing pid 116347 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_srlv.S
 Running assembly/smipsv2_srlv.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117404 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 117680 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_subu.S
 Running assembly/smipsv2_subu.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 118989 failed: Operation not permitted
-pkill: killing pid 119258 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_sw.S
 Running assembly/smipsv2_sw.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 119258 failed: Operation not permitted
-pkill: killing pid 120080 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_xori.S
 Running assembly/smipsv2_xori.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 119258 failed: Operation not permitted
-pkill: killing pid 120962 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/assembly/smipsv2_xor.S
 Running assembly/smipsv2_xor.S on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 119258 failed: Operation not permitted
-pkill: killing pid 121855 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 PASSED
 SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/multiply
 Running multiply on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 119258 failed: Operation not permitted
-pkill: killing pid 122816 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 Cycles = 21693
 Insts  = 21100
 PASSED
@@ -1150,27 +785,10 @@ SceMi Service thread finished!
 
 Compiling /home/ZY2006202/lab_template/Lab4/programs/src/filters
 Running filters on ControlHazardOnly/pcMsg_epoch_bypass.bsv
-pkill: killing pid 13314 failed: Operation not permitted
-pkill: killing pid 26577 failed: Operation not permitted
-pkill: killing pid 26806 failed: Operation not permitted
-pkill: killing pid 30055 failed: Operation not permitted
-pkill: killing pid 32140 failed: Operation not permitted
+pkill: killing pid 17115 failed: Operation not permitted
 pkill: killing pid 46182 failed: Operation not permitted
-pkill: killing pid 49801 failed: Operation not permitted
 pkill: killing pid 55326 failed: Operation not permitted
 pkill: killing pid 76959 failed: Operation not permitted
-pkill: killing pid 78631 failed: Operation not permitted
-pkill: killing pid 95573 failed: Operation not permitted
-pkill: killing pid 97047 failed: Operation not permitted
-pkill: killing pid 97257 failed: Operation not permitted
-pkill: killing pid 111928 failed: Operation not permitted
-pkill: killing pid 117193 failed: Operation not permitted
-pkill: killing pid 117517 failed: Operation not permitted
-pkill: killing pid 119258 failed: Operation not permitted
-pkill: killing pid 124089 failed: Operation not permitted
-pkill: killing pid 165815 failed: Operation not permitted
-pkill: killing pid 171540 failed: Operation not permitted
-pkill: killing pid 216160 failed: Operation not permitted
 called sharpen
 exiting sharpen
 called sharpen
@@ -1183,7 +801,7 @@ called sharpen
 exiting sharpen
 called sharpen
 exiting sharpen
-Cycles = 882103
+Cycles = 882104
 Insts  = 867331
 PASSED
 SceMi Service thread finished!

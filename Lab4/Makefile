@@ -3,7 +3,7 @@
 # 	  -c all --run
 
 p1:
-	utility-bins/smips -b simulator/procs/ControlHazardOnly/pcMsg_epoch.bsv \
+	utility-bins/smips -b simulator/procs/ControlHazardOnly/pcMsg_epoch_scoreboard.bsv \
 	  -c all --run
 
 p2:

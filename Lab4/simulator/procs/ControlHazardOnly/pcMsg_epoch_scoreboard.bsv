@@ -53,11 +53,9 @@ module [Module] mkProc(Proc);
   Cop       cop <- mkCop;
   AddrPred pcPred <- mkBtb;
 
-  // Fifo#(1, Fetch2Execute) f2Ex <- mkPipelineFifo;
   Fifo#(2, Fetch2Execute) f2Ex <- mkCFFifo;
   Fifo#(2, Execute2Writeback) ex2Wb <- mkCFFifo;
   Fifo#(1, Redirect) execRedirect <- mkBypassFifo;
-  // Fifo#(2, Redirect)   execRedirect <- mkCFFifo;
 
   Scoreboard#(3) scoreboard <- mkCFScoreboard;
 
@@ -112,9 +110,7 @@ module [Module] mkProc(Proc);
     end
   endrule
 
-  // Execute, Memory.
   rule doExecute;
-    // let inst  = f2Ex.first.inst;
     let dInst = f2Ex.first.dInst;
     let rVal1 = f2Ex.first.rVal1;
     let rVal2 = f2Ex.first.rVal2;
@@ -126,16 +122,9 @@ module [Module] mkProc(Proc);
     // Proceed only if the epochs match
     if(epoch == eEpoch)
     begin
-      // $display("Execute: pc: %h inst: (%h) expanded: ", pc, inst, showInst(inst));
       $display("Execute: pc: %h", pc);
   
-      // let dInst = decode(inst);
-  
-      // let rVal1 = rf.rd1(validRegValue(dInst.src1));
-      // let rVal2 = rf.rd2(validRegValue(dInst.src2));     
-  
-      // let copVal = cop.rd(validRegValue(dInst.src1));
-  
+      // Execute.
       let eInst = exec(dInst, rVal1, rVal2, pc, ppc, copVal);
   
       if(eInst.iType == Unsupported)
@@ -144,6 +133,7 @@ module [Module] mkProc(Proc);
         $finish;
       end
 
+      // Memory.
       if(eInst.iType == Ld)
       begin
         let data <- dMem.req(MemReq{op: Ld, addr: eInst.addr, byteEn: ?, data: ?});
@@ -154,9 +144,6 @@ module [Module] mkProc(Proc);
         match {.byteEn, .data} = scatterStore(eInst.addr, eInst.byteEn, eInst.data);
         let d <- dMem.req(MemReq{op: St, addr: eInst.addr, byteEn: byteEn, data: data});
       end
-
-      // if (isValid(eInst.dst) && validValue(eInst.dst).regType == Normal)
-      //   rf.wr(validRegValue(eInst.dst), eInst.data);
   
       // Send the branch resolution to fetch stage, irrespective of whether it's mispredicted or not
       // Note that the primitive version don't consider J, JR either. And the
@@ -179,18 +166,16 @@ module [Module] mkProc(Proc);
     f2Ex.deq;
   endrule
 
-  // Writeback.
   rule doWriteback;
     let dst = ex2Wb.first.dst;
     let data = ex2Wb.first.data;
 
-    // [TODO] Conditional write.
+    // Writeback.
     if (isValid(dst) && validValue(dst).regType == Normal)
     begin
       rf.wr(validRegValue(dst), data);
       scoreboard.remove;
     end
-    // cop.wr(dst, data);
 
     ex2Wb.deq;
   endrule
