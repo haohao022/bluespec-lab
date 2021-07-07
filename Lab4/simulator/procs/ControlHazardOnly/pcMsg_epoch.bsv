@@ -24,11 +24,19 @@ import Fifo::*;
 import AddrPred::*;
 
 typedef struct {
+  DecodedInst dInst;
+  Data rVal1;
+  Data rVal2;
+  Data copVal;
   Addr pc;
   Addr ppc;
-  Data inst;
   Bool epoch;
 } Fetch2Execute deriving (Bits, Eq);
+
+typedef struct {
+  Maybe#(FullIndx) dst;
+  Data             data;
+} Execute2Writeback deriving(Bits, Eq);
 
 interface Proc;
    method ActionValue#(Tuple2#(RIndx, Data)) cpuToHost;
@@ -44,8 +52,9 @@ module [Module] mkProc(Proc);
   Cop       cop <- mkCop;
   AddrPred pcPred <- mkBtb;
 
-  // Fifo#(1, Fetch2Execute) ir <- mkPipelineFifo;
-  Fifo#(2, Fetch2Execute) ir <- mkCFFifo;
+  // Fifo#(1, Fetch2Execute) f2Ex <- mkPipelineFifo;
+  Fifo#(2, Fetch2Execute) f2Ex <- mkCFFifo;
+  Fifo#(2, Execute2Writeback) ex2Wb <- mkCFFifo;
   Fifo#(1, Redirect) execRedirect <- mkBypassFifo;
   // Fifo#(2, Redirect)   execRedirect <- mkCFFifo;
 
@@ -59,9 +68,17 @@ module [Module] mkProc(Proc);
   Reg#(Bool) eEpoch <- mkReg(False);
 
   rule doFetch(cop.started);
+    // Fetch.
     let inst = iMem.req(pc);
-
     $display("Fetch: pc: %h inst: (%h) expanded: ", pc, inst, showInst(inst));
+
+    // Decode.
+    let dInst = decode(inst);
+    
+    // Register Read.
+    let rVal1 = rf.rd1(validRegValue(dInst.src1));
+    let rVal2 = rf.rd2(validRegValue(dInst.src2));
+    let copVal = cop.rd(validRegValue(dInst.src1));
 
     // dequeue the incoming redirect and update the predictor whether it's a mispredict or not
     if(execRedirect.notEmpty)
@@ -80,27 +97,34 @@ module [Module] mkProc(Proc);
     begin
       let ppc = pcPred.predPc(pc);
       pc <= ppc;
-      ir.enq(Fetch2Execute{pc: pc, ppc: ppc, inst: inst, epoch: fEpoch});
+      f2Ex.enq(Fetch2Execute{dInst: dInst, rVal1: rVal1, rVal2: rVal2,
+                           copVal: copVal, pc: pc, ppc: ppc, epoch: fEpoch});
     end
   endrule
 
+  // Execute, Memory.
   rule doExecute;
-    let inst  = ir.first.inst;
-    let pc    = ir.first.pc;
-    let ppc   = ir.first.ppc;
-    let epoch = ir.first.epoch;
+    // let inst  = f2Ex.first.inst;
+    let dInst = f2Ex.first.dInst;
+    let rVal1 = f2Ex.first.rVal1;
+    let rVal2 = f2Ex.first.rVal2;
+    let copVal = f2Ex.first.copVal;
+    let pc    = f2Ex.first.pc;
+    let ppc   = f2Ex.first.ppc;
+    let epoch = f2Ex.first.epoch;
 
     // Proceed only if the epochs match
     if(epoch == eEpoch)
     begin
-      $display("Execute: pc: %h inst: (%h) expanded: ", pc, inst, showInst(inst));
+      // $display("Execute: pc: %h inst: (%h) expanded: ", pc, inst, showInst(inst));
+      $display("Execute: pc: %h", pc);
   
-      let dInst = decode(inst);
+      // let dInst = decode(inst);
   
-      let rVal1 = rf.rd1(validRegValue(dInst.src1));
-      let rVal2 = rf.rd2(validRegValue(dInst.src2));     
+      // let rVal1 = rf.rd1(validRegValue(dInst.src1));
+      // let rVal2 = rf.rd2(validRegValue(dInst.src2));     
   
-      let copVal = cop.rd(validRegValue(dInst.src1));
+      // let copVal = cop.rd(validRegValue(dInst.src1));
   
       let eInst = exec(dInst, rVal1, rVal2, pc, ppc, copVal);
   
@@ -121,11 +145,11 @@ module [Module] mkProc(Proc);
         let d <- dMem.req(MemReq{op: St, addr: eInst.addr, byteEn: byteEn, data: data});
       end
 
-      if (isValid(eInst.dst) && validValue(eInst.dst).regType == Normal)
-        rf.wr(validRegValue(eInst.dst), eInst.data);
+      // if (isValid(eInst.dst) && validValue(eInst.dst).regType == Normal)
+      //   rf.wr(validRegValue(eInst.dst), eInst.data);
   
       // Send the branch resolution to fetch stage, irrespective of whether it's mispredicted or not
-      // Noted that the primitive version don't consider J, JR either. And the
+      // Note that the primitive version don't consider J, JR either. And the
       // answer in BUAA_COURSE_SHARING is not reliable, it simply closes the
       // branch prediction. Anyway, thanks to those pioneers of our open
       // source course!
@@ -138,9 +162,24 @@ module [Module] mkProc(Proc);
       if (eInst.mispredict) eEpoch <= !eEpoch;
   
       cop.wr(eInst.dst, eInst.data);
+      
+      ex2Wb.enq(Execute2Writeback{dst: eInst.dst, data: eInst.data});
     end
 
-    ir.deq;
+    f2Ex.deq;
+  endrule
+
+  // Writeback.
+  rule doWriteback;
+    let dst = ex2Wb.first.dst;
+    let data = ex2Wb.first.data;
+
+    // [TODO] Conditional write.
+    if (isValid(dst) && validValue(dst).regType == Normal)
+      rf.wr(validRegValue(dst), data);
+    // cop.wr(dst, data);
+
+    ex2Wb.deq;
   endrule
   
   method ActionValue#(Tuple2#(RIndx, Data)) cpuToHost;
