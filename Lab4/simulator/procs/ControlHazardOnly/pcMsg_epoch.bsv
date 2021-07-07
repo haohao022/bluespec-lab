@@ -22,6 +22,7 @@ import Exec::*;
 import Cop::*;
 import Fifo::*;
 import AddrPred::*;
+import Scoreboard::*;
 
 typedef struct {
   DecodedInst dInst;
@@ -58,6 +59,8 @@ module [Module] mkProc(Proc);
   Fifo#(1, Redirect) execRedirect <- mkBypassFifo;
   // Fifo#(2, Redirect)   execRedirect <- mkCFFifo;
 
+  Scoreboard#(2) scoreboard <- mkCFScoreboard;
+
   // This design uses two epoch registers, one for each stage of the pipeline.
   // Execute sets the eEpoch and discards any instruction that doesn't match it.
   // It passes the information about change of epoch to fetch stage indirectly by
@@ -93,12 +96,15 @@ module [Module] mkProc(Proc);
       pc <= execRedirect.first.nextPc;
     end
     // fetch the new instruction on a non mispredict
-    else
+    else if(!scoreboard.search1(dInst.src1) && !scoreboard.search2(dInst.src2))
     begin
       let ppc = pcPred.predPc(pc);
       pc <= ppc;
       f2Ex.enq(Fetch2Execute{dInst: dInst, rVal1: rVal1, rVal2: rVal2,
                            copVal: copVal, pc: pc, ppc: ppc, epoch: fEpoch});
+      let dst = dInst.dst;
+      if (isValid(dst) && validValue(dst).regType == Normal)
+        scoreboard.insert(dst);
     end
   endrule
 
@@ -176,7 +182,10 @@ module [Module] mkProc(Proc);
 
     // [TODO] Conditional write.
     if (isValid(dst) && validValue(dst).regType == Normal)
+    begin
       rf.wr(validRegValue(dst), data);
+      scoreboard.remove;
+    end
     // cop.wr(dst, data);
 
     ex2Wb.deq;
