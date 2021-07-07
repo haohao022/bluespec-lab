@@ -39,6 +39,8 @@ typedef struct {
   Data             data;
 } Execute2Writeback deriving(Bits, Eq);
 
+typedef Execute2Writeback WritebackRedirect;
+
 interface Proc;
    method ActionValue#(Tuple2#(RIndx, Data)) cpuToHost;
    method Action hostToCpu(Bit#(32) startpc);
@@ -57,6 +59,7 @@ module [Module] mkProc(Proc);
   Fifo#(2, Fetch2Execute) f2Ex <- mkCFFifo;
   Fifo#(2, Execute2Writeback) ex2Wb <- mkCFFifo;
   Fifo#(1, Redirect) execRedirect <- mkBypassFifo;
+  Fifo#(1, WritebackRedirect) wbRedirect <- mkBypassFifo;
   // Fifo#(2, Redirect)   execRedirect <- mkCFFifo;
 
   Scoreboard#(3) scoreboard <- mkCFScoreboard;
@@ -78,9 +81,24 @@ module [Module] mkProc(Proc);
     // Decode.
     let dInst = decode(inst);
     
+    // WbRedirect.
+    // Maybe#(FullIndx) rDst = Invalid;
+    // Data rData = 32'h0;
+    // if(wbRedirect.notEmpty)
+    // begin
+    //   wbRedirect.deq;
+    //   rDst = wbRedirect.first.dst;
+    //   rData = wbRedirect.first.data;
+    // end
+    if(wbRedirect.notEmpty) wbRedirect.deq;
+    let rDst = wbRedirect.notEmpty? wbRedirect.first.dst : Invalid;
+    let rData = wbRedirect.notEmpty? wbRedirect.first.data : 32'h0;
+
     // Register Read.
-    let rVal1 = rf.rd1(validRegValue(dInst.src1));
-    let rVal2 = rf.rd2(validRegValue(dInst.src2));
+    let rVal1 = dInst.src1 == rDst? rData : rf.rd1(validRegValue(dInst.src1));
+    let rVal2 = dInst.src2 == rDst? rData : rf.rd2(validRegValue(dInst.src2));
+    // let rVal1 = rf.rd1(validRegValue(dInst.src1));
+    // let rVal2 = rf.rd2(validRegValue(dInst.src2));
     let copVal = cop.rd(validRegValue(dInst.src1));
 
     // dequeue the incoming redirect and update the predictor whether it's a mispredict or not
@@ -96,28 +114,45 @@ module [Module] mkProc(Proc);
       pc <= execRedirect.first.nextPc;
     end
     // fetch the new instruction on a non mispredict
-    else if(!scoreboard.search1(dInst.src1) && !scoreboard.search2(dInst.src2))
+    // else if(!scoreboard.search1(dInst.src1) && !scoreboard.search2(dInst.src2))
+    else
     begin
       let ppc = pcPred.predPc(pc);
       pc <= ppc;
       f2Ex.enq(Fetch2Execute{dInst: dInst, rVal1: rVal1, rVal2: rVal2,
                            copVal: copVal, pc: pc, ppc: ppc, epoch: fEpoch});
-      let dst = dInst.dst;
-      if (isValid(dst) && validValue(dst).regType == Normal)
-        scoreboard.insert(dst);
+      // let dst = dInst.dst;
+      // if (isValid(dst) && validValue(dst).regType == Normal)
+      //   scoreboard.insert(dst);
     end
-    else
-    begin
-      $display("Block the pipeline at pc: %h", pc);
-    end
+    // else
+    // begin
+    //   $display("Block the pipeline at pc: %h", pc);
+    // end
   endrule
 
   // Execute, Memory.
   rule doExecute;
+    // WbRedirect.
+    // Maybe#(FullIndx) rDst = Invalid;
+    // Data rData = 32'h0;
+    // if(wbRedirect.notEmpty)
+    // begin
+    //   rDst = wbRedirect.first.dst;
+    //   rData = wbRedirect.first.data;
+    // end
+    // wbRedirect.deq;
+    // let rDst = wbRedirect.first.dst;
+    // let rData = wbRedirect.first.data;
+    let rDst = wbRedirect.notEmpty? wbRedirect.first.dst : Invalid;
+    let rData = wbRedirect.notEmpty? wbRedirect.first.data : 32'h0;
+
     // let inst  = f2Ex.first.inst;
     let dInst = f2Ex.first.dInst;
-    let rVal1 = f2Ex.first.rVal1;
-    let rVal2 = f2Ex.first.rVal2;
+    let rVal1 = dInst.src1 == rDst? rData : f2Ex.first.rVal1;
+    let rVal2 = dInst.src2 == rDst? rData : f2Ex.first.rVal2;
+    // let rVal1 = f2Ex.first.rVal1;
+    // let rVal2 = f2Ex.first.rVal2;
     let copVal = f2Ex.first.copVal;
     let pc    = f2Ex.first.pc;
     let ppc   = f2Ex.first.ppc;
@@ -188,9 +223,10 @@ module [Module] mkProc(Proc);
     if (isValid(dst) && validValue(dst).regType == Normal)
     begin
       rf.wr(validRegValue(dst), data);
-      scoreboard.remove;
+      // scoreboard.remove;
     end
     // cop.wr(dst, data);
+    wbRedirect.enq(ex2Wb.first);
 
     ex2Wb.deq;
   endrule

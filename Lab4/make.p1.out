@@ -23,7 +23,7 @@ pkill: killing pid 165815 failed: Operation not permitted
 pkill: killing pid 171540 failed: Operation not permitted
 pkill: killing pid 216160 failed: Operation not permitted
 pkill: killing pid 225231 failed: Operation not permitted
-Cycles = 39732
+Cycles = 37760
 Insts  = 21628
 PASSED
 SceMi Service thread finished!
@@ -48,7 +48,7 @@ pkill: killing pid 165815 failed: Operation not permitted
 pkill: killing pid 171540 failed: Operation not permitted
 pkill: killing pid 216160 failed: Operation not permitted
 pkill: killing pid 225231 failed: Operation not permitted
-Cycles = 12369
+Cycles = 11570
 Insts  = 6873
 PASSED
 SceMi Service thread finished!
@@ -73,7 +73,7 @@ pkill: killing pid 165815 failed: Operation not permitted
 pkill: killing pid 171540 failed: Operation not permitted
 pkill: killing pid 216160 failed: Operation not permitted
 pkill: killing pid 225231 failed: Operation not permitted
-Cycles = 4834
+Cycles = 4232
 Insts  = 3020
 PASSED
 SceMi Service thread finished!
@@ -98,7 +98,7 @@ pkill: killing pid 165815 failed: Operation not permitted
 pkill: killing pid 171540 failed: Operation not permitted
 pkill: killing pid 216160 failed: Operation not permitted
 pkill: killing pid 225231 failed: Operation not permitted
-Cycles = 15574
+Cycles = 14558
 Insts  = 9909
 PASSED
 SceMi Service thread finished!
@@ -126,7 +126,7 @@ pkill: killing pid 225231 failed: Operation not permitted
 chello world
 dhello world
 25
-Cycles = 676
+Cycles = 660
 Insts  = 369
 PASSED
 SceMi Service thread finished!
@@ -1048,7 +1048,7 @@ pkill: killing pid 165815 failed: Operation not permitted
 pkill: killing pid 171540 failed: Operation not permitted
 pkill: killing pid 216160 failed: Operation not permitted
 pkill: killing pid 225231 failed: Operation not permitted
-Cycles = 38398
+Cycles = 34798
 Insts  = 21100
 PASSED
 SceMi Service thread finished!
@@ -1085,7 +1085,7 @@ called sharpen
 exiting sharpen
 called sharpen
 exiting sharpen
-Cycles = 1567340
+Cycles = 1417182
 Insts  = 867331
 PASSED
 SceMi Service thread finished!
